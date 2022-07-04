@@ -1,1 +1,2 @@
 git -c http.sslVerify=false clone https://github.com/Fasih1994/big_data_spark.git
+git -c http.sslVerify=false pull
