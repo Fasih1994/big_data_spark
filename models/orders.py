@@ -1,6 +1,7 @@
 from spark_obj import get_or_create
 from pyspark.sql.avro.functions import from_avro
 from pyspark.sql.functions import col
+import os
 
 
 # Read Schema
@@ -14,8 +15,8 @@ def get_orders_df(app_name):
     orders_df = spark \
         .readStream \
         .format("kafka") \
-        .option("kafka.bootstrap.servers", "http://localhost:9092") \
-        .option("subscribe", "ORCLCDB.C__MYUSER.ORDERS") \
+        .option("kafka.bootstrap.servers", os.environ.get("BOOTSTRAP_SERVER")) \
+        .option("subscribe", os.environ.get("TOPIC_ORDERS")) \
         .option("startingOffsets", "earliest") \
         .load()
 
