@@ -4,46 +4,12 @@
   "namespace": "io.confluent.connect.avro",
   "fields": [
     {
-      "name": "ID",
-      "type": [
-        "null",
-        {
-          "type": "bytes",
-          "scale": 0,
-          "precision": 38,
-          "connect.version": 1,
-          "connect.parameters": {
-            "scale": "0"
-          },
-          "connect.name": "org.apache.kafka.connect.data.Decimal",
-          "logicalType": "decimal"
-        }
-      ],
-      "default": null
+      "name": "CATEGORY_ID",
+      "type": "double"
     },
     {
-      "name": "NAME",
-      "type": [
-        "null",
-        "string"
-      ],
-      "default": null
-    },
-    {
-      "name": "YEAR",
-      "type": [
-        "null",
-        "string"
-      ],
-      "default": null
-    },
-    {
-      "name": "PRICE",
-      "type": [
-        "null",
-        "string"
-      ],
-      "default": null
+      "name": "CATEGORY_NAME",
+      "type": "string"
     },
     {
       "name": "table",

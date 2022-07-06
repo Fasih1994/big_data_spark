@@ -4,33 +4,16 @@
   "namespace": "io.confluent.connect.avro",
   "fields": [
     {
-      "name": "ORDER_ID",
-      "type": "double"
+      "name": "PRODUCT_ID",
+      "type": "long"
     },
     {
-      "name": "CUSTOMER_ID",
+      "name": "WAREHOUSE_ID",
+      "type": "long"
+    },
+    {
+      "name": "QUANTITY",
       "type": "int"
-    },
-    {
-      "name": "STATUS",
-      "type": "string"
-    },
-    {
-      "name": "SALESMAN_ID",
-      "type": [
-        "null",
-        "int"
-      ],
-      "default": null
-    },
-    {
-      "name": "ORDER_DATE",
-      "type": {
-        "type": "int",
-        "connect.version": 1,
-        "connect.name": "org.apache.kafka.connect.data.Date",
-        "logicalType": "date"
-      }
     },
     {
       "name": "table",

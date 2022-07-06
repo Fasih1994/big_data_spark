@@ -4,33 +4,12 @@
   "namespace": "io.confluent.connect.avro",
   "fields": [
     {
-      "name": "ORDER_ID",
+      "name": "REGION_ID",
       "type": "double"
     },
     {
-      "name": "CUSTOMER_ID",
-      "type": "int"
-    },
-    {
-      "name": "STATUS",
+      "name": "REGION_NAME",
       "type": "string"
-    },
-    {
-      "name": "SALESMAN_ID",
-      "type": [
-        "null",
-        "int"
-      ],
-      "default": null
-    },
-    {
-      "name": "ORDER_DATE",
-      "type": {
-        "type": "int",
-        "connect.version": 1,
-        "connect.name": "org.apache.kafka.connect.data.Date",
-        "logicalType": "date"
-      }
     },
     {
       "name": "table",

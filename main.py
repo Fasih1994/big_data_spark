@@ -13,7 +13,6 @@ spark = get_or_create(app_name=APP_NAME)
 setLogLevel(app_name=APP_NAME, level='WARN')
 
 
-# cars_df = get_cars_df(app_name=APP_NAME)
 
 query = result\
     .writeStream \
@@ -28,10 +27,3 @@ query.awaitTermination()
 
 
 
-
-
-
-# orders_df.groupBy(
-#         window('sale_time', '30 minutes'),
-#         "CAR_NAME")
-#     .count()

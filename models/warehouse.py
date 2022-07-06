@@ -8,7 +8,7 @@ import os
 
 
 # Read Schema from cars_schema.json
-with open('schemas/warehouse_schema.json', 'r') as f:
+with open('schemas/warehouses_schema.json', 'r') as f:
     schema = f.read()
 
 
