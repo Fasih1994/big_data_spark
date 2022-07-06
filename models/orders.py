@@ -1,6 +1,7 @@
+# Read libraries
 from spark_obj import get_or_create
 from pyspark.sql.avro.functions import from_avro
-from pyspark.sql.functions import col
+from pyspark.sql.functions import col, current_timestamp
 import os
 
 
@@ -11,7 +12,7 @@ with open('schemas/orders_schema.json', 'r') as f:
 
 def get_orders_df(app_name):
     spark = get_or_create(app_name=app_name)
-    # Read stream for ORDERS
+    # Read stream from kafka topic for ORDERS
     orders_df = spark \
         .readStream \
         .format("kafka") \
@@ -21,7 +22,6 @@ def get_orders_df(app_name):
         .load()
 
     orders_df = orders_df.selectExpr("substring(value, 6) as value") \
-        .select(from_avro(col("value"), orders_schema).alias("orders")) \
-        .select("orders.ORDER_ID", "orders.CUSTOMER_NAME", "orders.NAME", "orders.YEAR", "orders.PRICE")
+        .select(from_avro(col("value"), orders_schema).alias("orders"))
 
     return orders_df

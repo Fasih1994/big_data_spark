@@ -1,7 +1,7 @@
+from unittest import result
 from dotenv import load_dotenv
 from spark_obj import get_or_create, setLogLevel
 from models.orders import get_orders_df
-from models.cars import get_cars_df
 import os
 
 
@@ -13,13 +13,25 @@ spark = get_or_create(app_name=APP_NAME)
 setLogLevel(app_name=APP_NAME, level='WARN')
 
 
-cars_df = get_cars_df(app_name=APP_NAME)
-orders_df = get_orders_df(app_name=APP_NAME)
+# cars_df = get_cars_df(app_name=APP_NAME)
 
-query = orders_df\
+query = result\
     .writeStream \
     .format("console") \
-    .outputMode('append') \
+    .outputMode('complete')\
     .start()
 
 query.awaitTermination()
+
+
+
+
+
+
+
+
+
+# orders_df.groupBy(
+#         window('sale_time', '30 minutes'),
+#         "CAR_NAME")
+#     .count()

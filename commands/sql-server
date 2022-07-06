@@ -1,0 +1,5 @@
+sqlcmd -C -S 10.92.26.184,1433 -U SA -P "MhffPOC2022"
+
+USE TestDB;
+SELECT * FROM Inventory;
+GO
