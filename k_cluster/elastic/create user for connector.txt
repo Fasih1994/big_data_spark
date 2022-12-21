@@ -1,0 +1,17 @@
+POST /_security/user/es_sink_connector
+{
+  "password" : "es_sink_connector_password",
+  "roles" : [ "es_sink_connector_role" ]
+}
+
+POST /_security/role/es_sink_connector_role
+{
+  "indices": [
+    {
+      "names": [ "*" ],
+      "privileges": ["create_index", "read", "write", "view_index_metadata"]
+    }
+  ]
+}
+
+GET /_security/role/es_sink_connector_role

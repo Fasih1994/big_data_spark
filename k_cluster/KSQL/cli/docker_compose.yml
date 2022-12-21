@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  ksqldb-cli:
+      image: confluentinc/cp-ksqldb-cli:7.2.0
+      container_name: ksqldb-cli
+      entrypoint: /bin/sh
+      tty: true
+
+networks:
+  default:
+    name: k_cluster_net
+    external: true
