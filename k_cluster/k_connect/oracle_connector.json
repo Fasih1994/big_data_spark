@@ -9,10 +9,10 @@
         "value.converter": "io.confluent.connect.avro.AvroConverter",
         "value.converter.schema.registry.url": "http://schema-registry:8081",
         "confluent.topic.bootstrap.servers": "kafka1:9092,kafka2:9092,kafka3:9092",
-        "oracle.server": "oracl19c",
+        "oracle.server": "oracle19c",
         "oracle.port": 1521,
-	"oracle.sid":"ORCLCDB",
-	"oracle.pdb.name":"ORCLPDB",
+	    "oracle.sid":"ORCLCDB",
+	    "oracle.pdb.name":"ORCLPDB",
         "oracle.username": "C##MYUSER",
         "oracle.password": "password",
         "start.from": "snapshot",
@@ -30,7 +30,7 @@
         "topic.creation.redo.cleanup.policy": "delete",
         "topic.creation.redo.retention.ms": 32400000,
         "topic.creation.default.replication.factor": 3,
-        "topic.creation.default.partitions": 3,
+        "topic.creation.default.partitions": 12,
         "topic.creation.default.cleanup.policy": "delete"
     }
 }
