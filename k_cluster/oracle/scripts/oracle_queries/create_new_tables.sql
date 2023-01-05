@@ -1,3 +1,10 @@
+/*
+Firt log in with user FASIH
+sqlplus FASIH/FASIHTEST@localhost:1521/ORCLPDB1
+
+*/
+
+-- create table 1
 CREATE TABLE orders(
     transaction_id NUMBER PRIMARY KEY,
     qty NUMBER(8,0),
@@ -5,7 +12,7 @@ CREATE TABLE orders(
     order_value NUMBER(8,2) -- 20% less than purchase value
     );
 
-
+-- create table 2
 CREATE TABLE purchase(
     transaction_id NUMBER PRIMARY KEY,
     username VARCHAR(50),
