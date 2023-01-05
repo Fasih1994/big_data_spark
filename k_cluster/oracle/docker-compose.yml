@@ -14,3 +14,8 @@ services:
     volumes:
       - ./data:/opt/oracle/oradata
       - ./scripts:/home/oracle/scripts
+
+networks:
+  default:
+    name: k_cluster_net
+    external: true
