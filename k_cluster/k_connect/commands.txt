@@ -1,5 +1,0 @@
-curl -s -X GET -H 'Content-Type: application/json' http://localhost:8083/connector-plugins | jq '.'
-
-curl -s -X POST -H 'Content-Type: application/json' --data @k_connect/oracle_connector.json http://localhost:8083/connectors | jq
-
-curl -s -X POST -H 'Content-Type: application/json' --data @k_connect/elastic_connector.json http://localhost:8083/connectors | jq

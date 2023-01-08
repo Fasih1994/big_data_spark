@@ -7,9 +7,13 @@ services:
     ports:
       - 2181:2181
     environment:
-      # TZ: ${TZ_SET}
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_SERVER_ID: 1
+      ZOOKEEPER_CLIENT_PORT: "2181"
+      ZOOKEEPER_TICK_TIME: "2000"
+      ZOOKEEPER_SERVERS: "zookeeper:2888:3888"
+    # volumes:
+    #   - ./data:/var/lib/zookeeper/data
+    #   - ./logs:/var/lib/zookeeper/log
 
 networks:
   default:
